@@ -10,12 +10,21 @@ declare -A keybs=(
    ["lily58"]="rev1"
    ["preonic"]="rev3"
    ["boardsource"]="technik_o"
+   ["crkbd"]="rev1"
 )
 
 declare -A keyMapDirs=(
    ["lily58"]=""
    ["preonic"]=""
    ["boardsource"]="technik_o/"
+   ["crkbd"]=""
+)
+
+declare -A extension=(
+   ["lily58"]="hex"
+   ["preonic"]="bin"
+   ["boardsource"]="hex"
+   ["crkbd"]="hex"
 )
 
 user="chgeuer"
@@ -33,7 +42,8 @@ for vendor in "${!keybs[@]}"; do
 
    cd "${root}/qmk_firmware" || exit
    qmk compile -kb "${vendor}/${keyboard}" -km "${user}"
-      cp ".build/${vendor}_${keyboard}_${user}.hex" "/mnt/c/Users/${user}/Desktop/"
+
+   cp ".build/${vendor}_${keyboard}_${user}.${extension[$vendor]}" "/mnt/c/Users/${user}/Desktop/"
    cd "${root}" || exit
    rm -f "${user}"
 done
