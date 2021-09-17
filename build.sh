@@ -1,15 +1,10 @@
 #!/bin/bash
 
-cd ./qmk_firmware || exit
-make git-submodule
-cd ..
+root="$( dirname "$( readlink -f "$0" )" )"
 
-user="chgeuer"
-destination="/mnt/c/Users/${user}/Desktop/"
-
-# ln -s -f "$(pwd)/chgeuer_keyboards/lily58__rev1"           ./qmk_firmware/keyboards/lily58/keymaps/chgeuer
-# ln -s -f "$(pwd)/chgeuer_keyboards/preonic__rev3"          ./qmk_firmware/keyboards/preonic/keymaps/chgeuer
-# ln -s -f "$(pwd)/chgeuer_keyboards/boardsource__technik_o" ./qmk_firmware/keyboards/boardsource/technik_o/keymaps/chgeuer
+# git submodule update
+# cd "${root}/qmk_firmware" || exit
+# make git-submodule
 
 declare -A keybs=(
    ["lily58"]="rev1"
@@ -17,24 +12,28 @@ declare -A keybs=(
    ["boardsource"]="technik_o"
 )
 
-declare -A keyMapDir=(
-   ["lily58"]="./qmk_firmware/keyboards/lily58/keymaps/chgeuer"
-   ["preonic"]="./qmk_firmware/keyboards/preonic/keymaps/chgeuer"
-   ["boardsource"]="./qmk_firmware/keyboards/boardsource/technik_o/keymaps/chgeuer"
+declare -A keyMapDirs=(
+   ["lily58"]=""
+   ["preonic"]=""
+   ["boardsource"]="technik_o/"
 )
+
+user="chgeuer"
 
 for vendor in "${!keybs[@]}"; do
    keyboard="${keybs[$vendor]}"
-   folder="${keyMapDir[$vendor]}"
+   echo "building ${vendor}:${keyboard}"
 
-   echo "building ${vendor}-${keyboard}"
-   
-   rm "${folder}"
-   ln -s -f "$(pwd)/chgeuer_keyboards/${vendor}__${keyboard}" "${folder}"
-   cd ./qmk_firmware || exit
+   keymapDir="${root}/qmk_firmware/keyboards/${vendor}/${keyMapDirs[$vendor]}keymaps"
+   # echo "cd ${keymapDir} && ln -s ${root}/chgeuer_keyboards/${vendor}__${keyboard} ${user}"
+   cd "${keymapDir}" || exit
+   rm -f "${user}"
+   ln --symbolic --verbose "${root}/chgeuer_keyboards/${vendor}__${keyboard}" "${user}"
+   # ls -als "${user}"
 
+   cd "${root}/qmk_firmware" || exit
    qmk compile -kb "${vendor}/${keyboard}" -km "${user}"
-   cp ".build/${vendor}_${keyboard}_${user}.hex" "${destination}"
-   cd ..
-   rm "${folder}"
+   cp ".build/${vendor}_${keyboard}_${user}.hex" "/mnt/c/Users/${user}/Desktop/"
+   cd "${root}" || exit
+   rm -f "${user}"
 done
