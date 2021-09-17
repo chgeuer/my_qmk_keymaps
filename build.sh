@@ -2,9 +2,9 @@
 
 root="$( dirname "$( readlink -f "$0" )" )"
 
-# git submodule update
-# cd "${root}/qmk_firmware" || exit
-# make git-submodule
+git submodule update
+cd "${root}/qmk_firmware" || exit
+make git-submodule
 
 declare -A keybs=(
    ["lily58"]="rev1"
@@ -33,7 +33,7 @@ for vendor in "${!keybs[@]}"; do
 
    cd "${root}/qmk_firmware" || exit
    qmk compile -kb "${vendor}/${keyboard}" -km "${user}"
-   cp ".build/${vendor}_${keyboard}_${user}.hex" "/mnt/c/Users/${user}/Desktop/"
+      cp ".build/${vendor}_${keyboard}_${user}.hex" "/mnt/c/Users/${user}/Desktop/"
    cd "${root}" || exit
    rm -f "${user}"
 done
