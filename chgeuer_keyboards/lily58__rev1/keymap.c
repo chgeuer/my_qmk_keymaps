@@ -35,8 +35,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_LOWER] = LAYOUT( \
         CH_CARET , ________, ________, ________,   ________, ________,                     ________, ________, ________, ________, ________, ________, \
         DE_PIPE  , DE_EXLM,  DE_DQUO , DE_DLR   ,  DE_PERC,  DE_AMPR,                      KC_F7,    KC_F8,    KC_F9,   KC_F10,  KC_F11,  KC_F12, \
-        KC_LSFT  , DE_AT,    DE_TILD , RALT(DE_D), ________, ________,                     KC_CIRC,  KC_AMPR,  KC_ASTR, KC_LPRN, KC_RPRN, KC_TILD, \
-        KC_LCTL  , ________, ________, ________,   ________, ________, KC_LGUI,  KC_RGUI,  ________, KC_UNDS,  KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE, \
+        KC_LSFT  , DE_AT,    DE_TILD , DE_EURO, ________, ________,                     KC_CIRC,  KC_AMPR,  KC_ASTR, KC_LPRN, KC_RPRN, KC_TILD, \
+        KC_LCTL  , ________, DE_DEG   , DE_SECT,   ________, ________, KC_LGUI,  KC_RGUI,  ________, KC_UNDS,  KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE, \
                                        ________,   ________, ________, ________, ________, ADJUST,   ________, ________ \
   ),
   [_RAISE] = LAYOUT( \

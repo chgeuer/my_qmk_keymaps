@@ -30,6 +30,7 @@ enum custom_keycodes {
 #define LIVEZOOM  LALT(LCTL(LSFT(DE_T)))
 #define DRAW      LALT(LCTL(LSFT(KC_F11)))
 
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK_DH] = LAYOUT_ortho_4x12(
         KC_ESC   , DE_Q     , DE_W     , DE_F     , DE_P     , DE_B     , DE_J     , DE_L     , DE_U     , DE_Y     , DE_SS    , DE_PLUS  ,
@@ -39,8 +40,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_LOWER] = LAYOUT_ortho_4x12(
         CH_CARET , DE_EXLM  , DE_DQUO  , DE_DLR     , DE_AMPR  , DE_PERC  , ________ , DE_LPRN  , DE_RPRN  , DE_MINS  , DE_EQL   , DE_BSLS  ,
-        DE_PIPE  , DE_AT    , DE_TILD  , RALT(DE_D) , ________ , ________ , ________ , DE_LCBR  , DE_RCBR  , DE_LBRC  , DE_RBRC  , DE_QUOT  ,
-        KC_LSFT  , ________ , ________ , ________   , ________ , ________ , ________ , DE_LABK  , DE_RABK  , DE_COLN  , DE_SLSH  , CH_BACKTICK  ,
+        DE_PIPE  , DE_AT    , DE_TILD  , DE_EURO    , ________ , ________ , ________ , DE_LCBR  , DE_RCBR  , DE_LBRC  , DE_RBRC  , DE_QUOT  ,
+        KC_LSFT  , ________ , DE_DEG   , DE_SECT    , ________ , ________ , ________ , DE_LABK  , DE_RABK  , DE_COLN  , DE_SLSH  , CH_BACKTICK  ,
         KC_LCTL  , KC_LGUI  , KC_LALT  , KC_BSPC    , KC_TRNS  , KC_SPC   , KC_SPC   , ADJUST   , ________ , ________ , ________ , CH_TICK  ),
 
     [_RAISE] = LAYOUT_ortho_4x12(
