@@ -52,9 +52,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_ADJUST] = LAYOUT_ortho_4x12(
         RGB_TOG  , RGB_MOD  , RGB_HUI  , RGB_M_P  , RGB_SAI  , RGB_VAI  , KC_BRIU   , KC_VOLU  , KC_MPRV  , KC_MNXT  , ________ , MAGIC_SWAP_RALT_RGUI ,
-        ________ , RGB_RMOD , RGB_HUD  , RGB_M_G  , RGB_SAD  , RGB_VAD  , KC_BRID   , KC_VOLD  , KC_MUTE  , KC_MPLY  , KC_MSTP  , ________ ,
-        KC_LSFT  , KC_LALT  , ________ , BL_DEC   , ZOOM     , LIVEZOOM , DRAW      , DE_ADIA  , DE_ODIA  , DE_UDIA  , DE_SS    , KC_RSFT  ,
-        KC_LCTL  , KC_LGUI  , KC_LALT  , KC_BSPC  , KC_TRNS  , SNAGIT   , SNAGIT    , KC_TRNS  , ________ , ________ , ________ , RESET    )
+        ________ , RGB_RMOD , RGB_HUD  , RGB_M_G  , RGB_SAD  , RGB_VAD  , KC_BRID   , KC_VOLD  , KC_MUTE  , KC_MPLY  , KC_MSTP  , RESET ,
+        KC_LSFT  , KC_LALT  , ________ , BL_DEC   , ZOOM     , LIVEZOOM , DRAW      , DE_ADIA  , DE_ODIA  , DE_UDIA  , DE_SS    , KC_RSFT ,
+        KC_LCTL  , KC_LGUI  , KC_LALT  , KC_BSPC  , KC_TRNS  , SNAGIT   , SNAGIT    , KC_TRNS  , ________ , ________ , ________ , ________ )
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record)
