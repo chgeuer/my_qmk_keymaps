@@ -4,6 +4,8 @@ root="$( dirname "$( readlink -f "$0" )" )"
 
 git submodule update
 cd "${root}/qmk_firmware" || exit
+git checkout master
+git pull
 make git-submodule
 
 declare -A keybs=(
@@ -11,6 +13,7 @@ declare -A keybs=(
    ["preonic"]="rev3"
    ["boardsource"]="technik_o"
    ["crkbd"]="rev1"
+   ["massdrop"]="thekey"
 )
 
 declare -A keyMapDirs=(
@@ -18,6 +21,7 @@ declare -A keyMapDirs=(
    ["preonic"]=""
    ["boardsource"]="technik_o/"
    ["crkbd"]=""
+   ["massdrop"]="thekey/"
 )
 
 declare -A extension=(
@@ -25,6 +29,7 @@ declare -A extension=(
    ["preonic"]="bin"
    ["boardsource"]="hex"
    ["crkbd"]="hex"
+   ["massdrop"]="hex"
 )
 
 user="chgeuer"
