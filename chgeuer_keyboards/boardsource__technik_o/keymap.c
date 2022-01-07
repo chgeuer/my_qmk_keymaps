@@ -10,8 +10,8 @@ enum layers {
 };
 
 // Readability keycodes
-#define LOWER   MO(_LOWER)
-#define RAISE   MO(_RAISE)
+#define LOWER  MO(_LOWER)
+#define RAISE  MO(_RAISE)
 #define ADJUST MO(_ADJUST)
 
 enum custom_keycodes {
@@ -30,13 +30,24 @@ enum custom_keycodes {
 #define LIVEZOOM  LALT(LCTL(LSFT(DE_T)))
 #define DRAW      LALT(LCTL(LSFT(KC_F11)))
 
+// Left-hand home row mods
+#define HOME_A LALT_T(DE_A)
+#define HOME_R LGUI_T(DE_R)
+#define HOME_S LCTL_T(DE_S)
+#define HOME_T LSFT_T(DE_T)
+
+// Right-hand home row mods
+#define HOME_N RSFT_T(DE_N)
+#define HOME_E RCTL_T(DE_E)
+#define HOME_I RGUI_T(DE_I)
+#define HOME_O LALT_T(DE_O)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK_DH] = LAYOUT_ortho_4x12(
-        KC_ESC   , DE_Q     , DE_W     , DE_F     , DE_P     , DE_B     , DE_J     , DE_L     , DE_U     , DE_Y     , DE_SS    , DE_PLUS  ,
-        KC_TAB   , DE_A     , DE_R     , DE_S     , DE_T     , DE_G     , DE_M     , DE_N     , DE_E     , DE_I     , DE_O     , DE_HASH  ,
-        KC_LSFT  , DE_Z     , DE_X     , DE_C     , DE_D     , DE_V     , DE_K     , DE_H     , DE_COMM  , DE_DOT   , DE_MINS  , KC_RSFT  ,
-        KC_LCTL  , KC_LGUI  , KC_LALT  , KC_BSPC  , LOWER    , KC_SPC   , KC_SPC   , RAISE    , KC_ENT   , KC_DEL   , KC_RGUI  , KC_RCTL ),
+        KC_ESC   , DE_Q     , DE_W     , DE_F       , DE_P     , DE_B     , DE_J     , DE_L     , DE_U     , DE_Y     , DE_SS    , DE_PLUS  ,
+        KC_TAB   , HOME_A   , HOME_R   , HOME_S     , HOME_T   , DE_G     , DE_M     , HOME_N   , HOME_E   , HOME_I   , HOME_O   , DE_HASH  ,
+        KC_LSFT  , DE_Z     , DE_X     , DE_C       , DE_D     , DE_V     , DE_K     , DE_H     , DE_COMM  , DE_DOT   , DE_MINS  , KC_RSFT  ,
+        KC_LCTL  , KC_LGUI  , KC_LALT  , KC_BSPC    , LOWER    , KC_SPC   , KC_SPC   , RAISE    , KC_ENT   , KC_DEL   , KC_RGUI  , KC_RCTL ),
 
     [_LOWER] = LAYOUT_ortho_4x12(
         CH_CARET , DE_EXLM  , DE_DQUO  , DE_DLR     , DE_AMPR  , DE_PERC  , ________ , DE_LPRN  , DE_RPRN  , DE_MINS  , DE_EQL   , DE_BSLS  ,

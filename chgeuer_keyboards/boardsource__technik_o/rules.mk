@@ -23,3 +23,5 @@ MOUSEKEY_ENABLE = yes      # Mouse keys
 # DIP_SWITCH_ENABLE = yes
 
 # LAYOUTS = ortho_5x12
+
+# TAP_DANCE_ENABLE = yes
