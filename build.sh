@@ -2,11 +2,13 @@
 
 root="$( dirname "$( readlink -f "$0" )" )"
 
-git submodule update
-cd "${root}/qmk_firmware" || exit
-git checkout master
-git pull
-make git-submodule
+echo "root dir: ${root}"
+
+# git submodule update
+# cd "${root}/qmk_firmware" || exit
+# git checkout master
+# git pull
+# make git-submodule
 
 declare -A keybs=(
    ["lily58"]="rev1"

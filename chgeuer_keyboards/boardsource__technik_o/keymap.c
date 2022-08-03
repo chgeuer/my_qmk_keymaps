@@ -47,7 +47,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_ESC   , DE_Q     , DE_W     , DE_F       , DE_P     , DE_B     , DE_J     , DE_L     , DE_U     , DE_Y     , DE_SS    , DE_PLUS  ,
         KC_TAB   , HOME_A   , HOME_R   , HOME_S     , HOME_T   , DE_G     , DE_M     , HOME_N   , HOME_E   , HOME_I   , HOME_O   , DE_HASH  ,
         KC_LSFT  , DE_Z     , DE_X     , DE_C       , DE_D     , DE_V     , DE_K     , DE_H     , DE_COMM  , DE_DOT   , DE_MINS  , KC_RSFT  ,
-        KC_LCTL  , KC_LGUI  , KC_LALT  , KC_BSPC    , LOWER    , KC_SPC   , KC_SPC   , RAISE    , KC_ENT   , KC_DEL   , KC_RGUI  , KC_RCTL ),
+        //KC_LCTL  , KC_LGUI  , KC_LALT  , KC_BSPC    , LOWER    , KC_SPC   , KC_SPC   , RAISE    , KC_ENT   , KC_DEL   , KC_RGUI  , KC_RCTL ),
+        KC_LCTL  , KC_LGUI  , KC_LALT  , LT(LOWER, KC_BSPC), LT(LOWER, KC_SPC)    , KC_SPC   , KC_SPC   ,  LT(RAISE, KC_SPC), LT(RAISE, KC_ENT)  , KC_DEL   , KC_RGUI  , KC_RCTL ),
 
     [_LOWER] = LAYOUT_ortho_4x12(
         CH_CARET , DE_EXLM  , DE_DQUO  , DE_DLR     , DE_AMPR  , DE_PERC  , ________ , DE_LPRN  , DE_RPRN  , DE_MINS  , DE_EQL   , DE_BSLS  ,
