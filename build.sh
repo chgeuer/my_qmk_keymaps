@@ -11,27 +11,30 @@ echo "root dir: ${root}"
 # make git-submodule
 
 declare -A keybs=(
-   ["lily58"]="rev1"
-   ["preonic"]="rev3"
-   ["boardsource"]="technik_o"
-   ["crkbd"]="rev1"
-   ["massdrop"]="thekey"
+   # ["lily58"]="rev1"
+   # ["preonic"]="rev3"
+   # ["boardsource"]="technik_o"
+   # ["crkbd"]="rev1"
+   # ["massdrop"]="thekey"
+   ["wilba_tech"]="rama_works_m6_b"
 )
 
 declare -A keyMapDirs=(
-   ["lily58"]=""
-   ["preonic"]=""
-   ["boardsource"]="technik_o/"
-   ["crkbd"]=""
-   ["massdrop"]="thekey/"
+   # ["lily58"]=""
+   # ["preonic"]=""
+   # ["boardsource"]="technik_o/"
+   # ["crkbd"]=""
+   # ["massdrop"]="thekey/"
+   ["wilba_tech"]="rama_works_m6_b/"
 )
 
 declare -A extension=(
-   ["lily58"]="hex"
-   ["preonic"]="bin"
-   ["boardsource"]="hex"
-   ["crkbd"]="hex"
-   ["massdrop"]="hex"
+   # ["lily58"]="hex"
+   # ["preonic"]="bin"
+   # ["boardsource"]="hex"
+   # ["crkbd"]="hex"
+   # ["massdrop"]="hex"
+   ["wilba_tech"]="hex"
 )
 
 user="chgeuer"
